@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class FruitsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
-        $this->call(FruitsTableSeeder::class);
+        foreach (range(1, 10) as $i){
+            $fruit = new \App\Fruits();
+            $fruit->save();
+        }
     }
 }
